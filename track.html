@@ -93,6 +93,7 @@
       $scope.reset_code = function() {
         $scope.code = null;
       }
+      angular.element($window.document.body).find("input")[0].focus();
     }]);
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['App']);
