@@ -80,6 +80,9 @@
         ]
       ];
       $scope.clipboard = null;
+      $scope.focus = function() {
+        angular.element($window.document.body).find("input")[0].focus();
+      };
       $scope.copy = function(text) {
         var textarea = angular.element('<textarea/>');
         //textarea.css({position:"fixed",opacity:"0"});
@@ -92,8 +95,9 @@
       };
       $scope.reset_code = function() {
         $scope.code = null;
+        $scope.focus();
       }
-      angular.element($window.document.body).find("input")[0].focus();
+      $scope.focus();
     }]);
     angular.element(document).ready(function() {
         angular.bootstrap(document, ['App']);
